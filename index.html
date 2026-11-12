@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f0e7">
+  <meta name="description" content="Đọc truyện, luyện dịch Trung–Việt và lưu tiến độ học tiếng Trung của bạn.">
+  <title>纸间 · Chinese Novel Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="Chinese Novel Lab home">
+        <span class="brand-mark">纸</span><span class="brand-copy"><b>纸间</b><small>CHINESE NOVEL LAB</small></span>
+      </a>
+      <div class="side-label">KHÔNG GIAN HỌC</div>
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <button class="nav-item active" data-view="reader"><span class="nav-icon">▤</span> Phòng đọc <span class="nav-count">01</span></button>
+        <button class="nav-item" data-view="library"><span class="nav-icon">▧</span> Thư viện <span class="nav-count" id="storyCount">01</span></button>
+        <button class="nav-item" data-view="progress"><span class="nav-icon">◷</span> Tiến độ</button>
+      </nav>
+      <div class="side-rule"></div>
+      <div class="side-label row-between">TRUYỆN CỦA BẠN <button class="tiny-add" id="openAdd" aria-label="Thêm truyện">+</button></div>
+      <div class="story-nav" id="storyNav"></div>
+      <div class="sidebar-bottom">
+        <div class="streak-card"><div class="streak-top"><span>✦</span><b id="streakLabel">Bắt đầu hành trình</b></div><p>Mỗi đoạn truyện là một bước tiến nhỏ.</p><div class="streak-track"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small>7 ngày luyện tập</small></div>
+        <div class="profile"><div class="avatar">T</div><div><b>Người học</b><small>Học theo nhịp của bạn</small></div><span class="profile-dots">···</span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Mở menu">☰</button>
+        <div class="breadcrumbs"><span>THƯ VIỆN</span><b>/</b><span id="crumbStory">MÙA MƯA Ở TÔ CHÂU</span></div>
+        <div class="top-actions"><span class="level-pill"><i></i> HỌC TẬP NHẸ NHÀNG</span><button class="icon-button" aria-label="Cài đặt">⚙</button><div class="mini-avatar">T</div></div>
+      </header>
+      <section class="view reader-view" id="readerView">
+        <div class="reader-grid">
+          <div class="reading-column">
+            <div class="chapter-eyebrow"><span>TRUYỆN NGẮN</span><i></i><span id="chapterMeta">CHƯƠNG 01 · 5 PHÚT</span></div>
+            <div class="chapter-heading"><div><h1 id="chapterTitle">Cơn mưa đầu mùa</h1><p id="chapterSubtitle">Một câu chuyện nhỏ ở thành phố bên sông</p></div><button class="bookmark-button" id="bookmarkBtn" aria-label="Lưu đoạn">♡</button></div>
+            <div class="chapter-progress"><div class="progress-line"><i id="progressBar"></i></div><span id="progressLabel">ĐOẠN 01 / 03</span></div>
+
+            <div class="mode-card">
+              <div class="mode-heading"><div><span class="section-kicker">CHẾ ĐỘ LUYỆN TẬP</span><h2>Chọn hướng dịch</h2></div><span class="mode-spark">✳</span></div>
+              <div class="mode-switch" role="group" aria-label="Chọn hướng dịch">
+                <button class="mode-option selected" data-mode="zh-vi"><span class="mode-lang">中 → 越</span><span><b>Trung sang Việt</b><small>Đọc hiểu & diễn đạt</small></span><i class="radio-dot"></i></button>
+                <button class="mode-option" data-mode="vi-zh"><span class="mode-lang">越 → 中</span><span><b>Việt sang Trung</b><small>Ghi nhớ & vận dụng</small></span><i class="radio-dot"></i></button>
+              </div>
+              <div class="mode-note"><span>◉</span><span><b>Gợi ý đang được ẩn.</b> Hãy thử dịch trước khi mở đáp án.</span></div>
+            </div>
+
+            <article class="passage-card">
+              <div class="passage-top"><div class="passage-label"><span class="sound-icon">♫</span><span id="sourceLanguage">VĂN BẢN TIẾNG TRUNG</span></div><button class="listen-button" id="listenBtn"><span>▶</span> Nghe đoạn</button></div>
+              <p class="passage-text chinese-text" id="sourceText" lang="zh">雨停的时候，苏州的巷子里还留着淡淡的水汽。林晚推开旧书店的门，风铃轻轻响了一声。她没有想到，那个多年未见的人，会坐在窗边等她。</p>
+              <div class="passage-footer"><span><b>提示</b> 点击“显示译文”后可以对照参考答案</span><span id="wordCount">54 字</span></div>
+            </article>
+
+            <section class="answer-section">
+              <div class="answer-heading"><div><span class="section-kicker">ĐẾN LƯỢT BẠN</span><h2 id="answerTitle">Viết bản dịch tiếng Việt</h2></div><span class="answer-status" id="answerStatus"><i></i> CHƯA HOÀN THÀNH</span></div>
+              <textarea id="answerInput" placeholder="Hãy viết cách bạn hiểu đoạn văn này..." aria-label="Bản dịch của bạn"></textarea>
+              <div class="answer-actions"><button class="primary-button" id="checkBtn"><span>✓</span> Lưu bản dịch</button><button class="text-button" id="revealBtn">Hiện gợi ý tiếng Việt <span>⌄</span></button></div>
+              <div class="hint-panel hidden" id="hintPanel"><div class="hint-head"><div><span class="section-kicker">BẢN DỊCH THAM KHẢO</span><strong>Tiếng Việt</strong></div><button id="hideHint" class="close-hint" aria-label="Ẩn đáp án">×</button></div><p id="hintText">Khi cơn mưa dứt, trong những con ngõ ở Tô Châu vẫn còn vương chút hơi nước. Lâm Vãn đẩy cửa hiệu sách cũ, chiếc chuông gió khẽ ngân lên. Cô không ngờ người đã nhiều năm không gặp ấy lại đang ngồi bên cửa sổ chờ mình.</p></div>
+              <div class="reflection hidden" id="reflection"><span>✧</span><span>Bản dịch đã được lưu trên thiết bị này. Bạn có thể quay lại chỉnh sửa bất cứ lúc nào.</span></div>
+            </section>
+            <div class="chapter-controls"><button id="prevBtn" class="control-button" disabled>← <span>Đoạn trước</span></button><span class="control-center">ĐỌC CHẬM · HIỂU SÂU</span><button id="nextBtn" class="control-button"> <span>Đoạn tiếp</span> →</button></div>
+          </div>
+          <aside class="right-rail">
+            <div class="rail-card story-info"><div class="book-cover"><div class="cover-moon"></div><div class="cover-vertical">雨落苏州</div><div class="cover-bottom"><span>短篇小说</span><b>苏州<br>的雨季</b></div></div><div class="story-info-copy"><span class="section-kicker">ĐANG ĐỌC</span><h3 id="railTitle">Mùa mưa ở Tô Châu</h3><p>Truyện ngắn · Sơ cấp–Trung cấp</p><div class="tag-row"><span>城市</span><span>重逢</span><span>日常</span></div></div></div>
+            <div class="rail-card vocab-card"><div class="rail-title"><div><span class="section-kicker">GÓC TỪ VỰNG</span><h3>Từ khóa trong đoạn</h3></div><span class="vocab-count">03</span></div><div class="vocab-list" id="vocabList"><div class="vocab-row"><div><b>巷子</b><small>xiàngzi · danh từ</small></div><span>con ngõ</span></div><div class="vocab-row"><div><b>风铃</b><small>fēnglíng · danh từ</small></div><span>chuông gió</span></div><div class="vocab-row"><div><b>多年未见</b><small>duōnián wèijiàn · cụm từ</small></div><span>nhiều năm không gặp</span></div></div><button class="vocab-more" id="vocabToggle">Ẩn từ gợi ý <span>⌃</span></button></div>
+            <div class="rail-card note-card"><span class="note-mark">“</span><p>Đừng dịch từng chữ. Hãy thử giữ lại cảm giác của câu chuyện.</p><small>GHI CHÚ NHỎ</small></div>
+            <button class="add-passage-card" id="addPassage"><span>＋</span><div><b>Thêm đoạn truyện</b><small>Dán văn bản bạn muốn luyện dịch</small></div><i>→</i></button>
+          </aside>
+        </div>
+      </section>
+      <section class="view alternate-view hidden" id="libraryView"><div class="page-intro"><span class="section-kicker">KHO TRUYỆN CỦA BẠN</span><h1>Những câu chuyện đang chờ</h1><p>Lưu lại các đoạn bạn muốn đọc và luyện dịch theo nhịp riêng.</p><button class="primary-button" id="libraryAdd">＋ Thêm truyện mới</button></div><div class="library-grid" id="libraryGrid"></div></section>
+      <section class="view alternate-view hidden" id="progressView"><div class="page-intro"><span class="section-kicker">NHỊP HỌC CỦA BẠN</span><h1>Tiến bộ qua từng trang</h1><p>Mọi hoạt động được lưu trong trình duyệt trên thiết bị này.</p></div><div class="stats-grid"><div class="stat-card"><span>ĐOẠN ĐÃ LUYỆN</span><b id="statPassages">0</b><small>Đoạn có bản dịch được lưu</small></div><div class="stat-card"><span>TRUYỆN ĐÃ LƯU</span><b id="statStories">1</b><small>Trong thư viện cá nhân</small></div><div class="stat-card"><span>CHẾ ĐỘ ƯA THÍCH</span><b id="statMode">中 → 越</b><small>Có thể đổi bất cứ lúc nào</small></div></div><div class="progress-note"><span>✦</span><div><b>Tiến bộ nhỏ vẫn là tiến bộ.</b><p>Hãy thử tự dịch trước, sau đó so sánh với gợi ý để nhận ra cách diễn đạt mới.</p></div></div></section>
+      <footer class="footer"><span>纸间 · Đọc một chút, hiểu thêm một chút.</span><span>TIẾNG TRUNG QUA NHỮNG CÂU CHUYỆN</span></footer>
+    </main>
+  </div>
+
+  <dialog id="addDialog" class="add-dialog"><form method="dialog" id="addForm"><div class="dialog-top"><div><span class="section-kicker">MỞ RỘNG THƯ VIỆN</span><h2>Thêm truyện hoặc đoạn mới</h2></div><button class="dialog-close" value="cancel" aria-label="Đóng">×</button></div><p class="dialog-description">Dán văn bản tiếng Trung và bản dịch tham khảo của bạn. Nội dung chỉ được lưu trong trình duyệt này.</p><label>Tên truyện<input id="newStoryTitle" required placeholder="Ví dụ: Lá thư mùa hạ"></label><label>Tên đoạn<input id="newChapterTitle" required placeholder="Ví dụ: Bức thư chưa gửi"></label><div class="form-two"><label>Tiếng Trung<textarea id="newChinese" required lang="zh" placeholder="粘贴中文原文…"></textarea></label><label>Tiếng Việt<textarea id="newVietnamese" required placeholder="Dán bản dịch tiếng Việt…"></textarea></label></div><div class="dialog-actions"><button class="text-button" value="cancel">Hủy</button><button class="primary-button" id="saveStory" value="default">Lưu vào thư viện</button></div></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
